@@ -1,12 +1,12 @@
 import sys
 sys.stdin = open('input.txt')
 
-def postorder(n):
+def preorder(n):
     global ans
     if n < (N+1):
         ans += tree[n]
-        postorder(2*n)
-        postorder(2*n+1)
+        preorder(2*n)
+        preorder(2*n+1)
 
 
 T = int(input())
@@ -19,5 +19,5 @@ for tc in range(1, T+1):
         tree[idx] = v
 
     ans = 0
-    postorder(L)
+    preorder(L)
     print(f'#{tc} {ans}')
