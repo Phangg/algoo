@@ -7,7 +7,7 @@ def bfs():
     q = deque()
 
     for i in range(N):
-        for j in range(M):              # 시작점 2개인 경우 있어서, 함수 내에서 탐색
+        for j in range(M):              # 시작점 2개인 경우 있음 / 함수 내에서 탐색 / q 에 append 하기
             if arr[i][j] == 1:
                 q.append([i, j])
     while q:
