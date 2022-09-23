@@ -4,8 +4,8 @@ sys.stdin = open('input.txt')
 def check(n, c):
     heap[c] = n                               # 값을 넣어주기
     p = c // 2                                # 부모 노드 인덱스
-    while n < heap[p]:                          # 부모노드 값보다, 현재 노드 값이 작은 동안
-        heap[c], heap[p] = heap[p], heap[c] # 서로 바꿔주기
+    while n < heap[p]:                        # 부모노드 값보다, 현재 노드 값이 작은 동안
+        heap[c], heap[p] = heap[p], heap[c]   # 서로 바꿔주기
         c = p                                 # 위로 올라가면서 체크
         p = c // 2
 
