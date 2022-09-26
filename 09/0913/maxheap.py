@@ -1,6 +1,4 @@
 
-# 최대 힙
-
 def enq(n):
     global last
     last += 1                       # 마지막 노드 추가
@@ -8,7 +6,7 @@ def enq(n):
 
     c = last
     p = c // 2                      # 완전 이진 트리 => 부모 노드 번호 c//2
-    while p and heap[p] < heap[c]:  # 부모가 있고, 부모 < 자식  경우 자리 교환
+    while p and heap[p] > heap[c]:  # 부모가 있고, 부모 > 자식  경우 자리 교환
         heap[p], heap[c] = heap[c], heap[p]
         c = p
         p = c // 2
