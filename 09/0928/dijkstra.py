@@ -31,9 +31,7 @@ def dijkstra(s):
 
     for _ in range(V+1):
         min_val = float('inf')
-
         # idx = -1
-        
         for i in range(V+1):
             if i not in U and min_val > distance[i]:
                 min_val = distance[i]
@@ -45,3 +43,43 @@ def dijkstra(s):
     print(distance)
 
 dijkstra(1)
+
+
+'''
+5 6
+1
+5 1 1
+1 2 2
+1 3 3
+2 3 4
+2 4 5
+3 4 6
+'''
+#
+# import heapq
+#
+# def dij(node):
+#     dist = [float('inf')] * (V+1)
+#     dist[node] = 0
+#     hq = []
+#     heapq.heappush(hq, [0, node])
+#
+#     while hq:
+#         now_w, now_v = heapq.heappop(hq)
+#         for w, v in adj_lst[now_v]:
+#             w += now_w
+#             if w < dist[v]:
+#                 dist[v] = w
+#                 heapq.heappush(hq, [w, v])
+#     return dist
+#
+#
+# V, E = map(int, input().split())
+# start = int(input())
+# adj_lst = [[] * (V+1) for _ in range(V+1)]
+# for _ in range(E):
+#     u, v, w = map(int, input().split())
+#     adj_lst[u].append((w, v))
+#
+# x = dij(start)
+# print(x)
