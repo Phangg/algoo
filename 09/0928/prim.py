@@ -1,6 +1,3 @@
-
-
-
 ###### prim #######################################################################################
 
 '''
@@ -20,14 +17,14 @@
 
 from collections import defaultdict
 
-V, E = map(int,input().split())
+V, E = map(int, input().split())
 graph_list = defaultdict(list)
 graph_matrix = [[0]*(V+1) for _ in range(V+1)]
 
 for _ in range(E):
-    s, e, weight = map(int,input().split())
-    graph_list[s].append((weight,s,e))
-    graph_list[e].append((weight,e,s))
+    s, e, weight = map(int, input().split())
+    graph_list[s].append((weight, s, e))
+    graph_list[e].append((weight, e, s))
 
     graph_matrix[s][e] = weight
     graph_matrix[e][s] = weight
@@ -73,7 +70,7 @@ def prim2(node):
     candidate = graph_list[node]
     heapq.heapify(candidate)
 
-    while len(visited) < V and candidate :
+    while len(visited) <= V and candidate :
         weight, s, e = heapq.heappop(candidate)
 
         if e not in visited:

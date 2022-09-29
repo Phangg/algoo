@@ -1,7 +1,3 @@
-
-
-
-
 '''
 6 11
 0 1 32
@@ -80,9 +76,9 @@ def mst_kruskal2():
     heapq.heapify(graph)
 
     while len(mst) < V and graph:
-        weight, s, e = heapq.heappop(graph)
+        weight, e, s = heapq.heappop(graph)
         if find_set(s) != find_set(e):
-            mst.append((weight,s,e))
-            union(s,e)
+            mst.append((weight, e, s))
+            union(s, e)
     print(mst)
     return sum(map(lambda x : x[0], mst))
