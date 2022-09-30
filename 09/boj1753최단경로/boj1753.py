@@ -10,6 +10,8 @@ def dij(node):
 
     while hq:
         now_w, now_v = heapq.heappop(hq)
+        if now_w > dist[now_v]:
+            continue
         for w, v in adj_lst[now_v]:
             w += now_w
             if w < dist[v]:
