@@ -55,31 +55,31 @@ dijkstra(1)
 2 4 5
 3 4 6
 '''
-#
-# import heapq
-#
-# def dij(node):
-#     dist = [float('inf')] * (V+1)
-#     dist[node] = 0
-#     hq = []
-#     heapq.heappush(hq, [0, node])
-#
-#     while hq:
-#         now_w, now_v = heapq.heappop(hq)
-#         for w, v in adj_lst[now_v]:
-#             w += now_w
-#             if w < dist[v]:
-#                 dist[v] = w
-#                 heapq.heappush(hq, [w, v])
-#     return dist
-#
-#
-# V, E = map(int, input().split())
-# start = int(input())
-# adj_lst = [[] * (V+1) for _ in range(V+1)]
-# for _ in range(E):
-#     u, v, w = map(int, input().split())
-#     adj_lst[u].append((w, v))
-#
-# x = dij(start)
-# print(x)
+
+import heapq
+
+def dij(node):
+    dist = [float('inf')] * (V+1)
+    dist[node] = 0
+    hq = []
+    heapq.heappush(hq, [0, node])
+
+    while hq:
+        now_w, now_v = heapq.heappop(hq)
+        for w, v in adj_lst[now_v]:
+            w += now_w
+            if w < dist[v]:
+                dist[v] = w
+                heapq.heappush(hq, [w, v])
+    return dist
+
+
+V, E = map(int, input().split())
+start = int(input())
+adj_lst = [[] * (V+1) for _ in range(V+1)]
+for _ in range(E):
+    u, v, w = map(int, input().split())
+    adj_lst[u].append((w, v))
+
+x = dij(start)
+print(x)

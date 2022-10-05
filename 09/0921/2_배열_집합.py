@@ -34,6 +34,36 @@ for i in range(0, 1 << n):              # 부분집합의 개수 (1부터 시작
     print()
 
 print()
+
+# 부분집합 2
+arr = [1, 2, 3, 4, 5]
+n = len(arr)
+
+res = []
+for i in range(1, 1 << n):
+    tmp = []
+    for j in range(0, n):
+        if i & (1 << j):
+            tmp.append(arr[j])
+    res.append(tmp)
+print(res)
+
+print()
+
+# 부분집합 3
+A = [-1, 3, -9, 6, 7, -6, 1, 5, 4]
+n = len(A)
+
+ans = 0
+for i in range(0, 1 << n):
+    lst = []
+    for j in range(0, n):
+        if i & (1 << j):
+            lst.append(A[j])
+    if sum(lst) == 0:
+        ans += 1
+        print(lst)
+
 # ------------------------------------------------------------------------
 
 def f(i, k):

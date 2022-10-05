@@ -22,3 +22,22 @@ n = len(A)
 r = 3
 comb = [0] * r
 nCr(n, r, 0)
+
+
+print()
+# ------------------------------------------------------------------------
+
+# 오름차순 조합
+def nCr(s):
+    if len(ans) == M:
+        print(*ans)
+    else:
+        for i in range(s, N+1):
+            if i not in ans:
+                ans.append(i)
+                nCr(i+1)
+                ans.pop()
+
+N, M = 4, 2
+ans = []
+nCr(1)
