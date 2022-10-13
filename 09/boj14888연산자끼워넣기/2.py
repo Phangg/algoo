@@ -1,3 +1,5 @@
+# pypy3 통과 / python3 시간초과
+
 import sys
 from itertools import permutations
 sys.stdin = open('input.txt')
@@ -17,7 +19,7 @@ def problem():
                 res = int(res / A[k])
         if res > max_v:
             max_v = res
-        elif res < min_v:
+        if res < min_v:
             min_v = res
 
 
@@ -33,8 +35,8 @@ for i, o in enumerate(op_num):
         op.append(op_list[i])
 # print(op)
 
-max_v = -1000000000
-min_v = 1000000000
+max_v = -1000000001
+min_v = 1000000001
 
 problem()
 
