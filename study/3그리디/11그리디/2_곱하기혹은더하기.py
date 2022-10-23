@@ -1,16 +1,23 @@
 import sys
 sys.stdin = open('2input.txt')
 
-S = list(map(int, sys.stdin.readline().rstrip()))
-S.sort(reverse=True)
+s = list(map(int, sys.stdin.readline().rstrip()))
+res = s[0]
+for i in range(1, len(s)):
+    res = max(res+s[i], res*s[i])
+print(res)
 
-ans = 1
-for s in S:
-    if s:
-        ans *= s
-    elif not s:
-        break
-print(ans)
+
+# S = list(map(int, sys.stdin.readline().rstrip()))
+# S.sort(reverse=True)
+#
+# ans = 1
+# for s in S:
+#     if s:
+#         ans *= s
+#     elif not s:
+#         break
+# print(ans)
 
 
 # x = S[0]
